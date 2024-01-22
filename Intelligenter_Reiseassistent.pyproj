@@ -28,19 +28,43 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Intelligenter_Reiseassistent\Classes\city.py" />
+    <Compile Include="Intelligenter_Reiseassistent\Classes\TravelAssistant.py" />
+    <Compile Include="Intelligenter_Reiseassistent\Classes\TravelPlanner.py" />
     <Compile Include="runserver.py" />
     <Compile Include="Intelligenter_Reiseassistent\__init__.py" />
     <Compile Include="Intelligenter_Reiseassistent\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Intelligenter_Reiseassistent\" />
+    <Folder Include="Intelligenter_Reiseassistent\Classes\" />
     <Folder Include="Intelligenter_Reiseassistent\static\" />
     <Folder Include="Intelligenter_Reiseassistent\static\content\" />
     <Folder Include="Intelligenter_Reiseassistent\static\fonts\" />
+    <Folder Include="Intelligenter_Reiseassistent\static\csv\" />
     <Folder Include="Intelligenter_Reiseassistent\static\scripts\" />
     <Folder Include="Intelligenter_Reiseassistent\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Intelligenter_Reiseassistent\static\csv\cities.csv" />
+    <Content Include="Intelligenter_Reiseassistent\static\csv\training_data.csv" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\2_hoch.geo.json" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\bootstrap.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\bootstrap.min.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\Bundesliga.js" />
+    <None Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.min.map" />
+    <None Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.min.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\respond.js" />
+    <Content Include="Intelligenter_Reiseassistent\static\scripts\respond.min.js" />
+    <None Include="Intelligenter_Reiseassistent\static\scripts\_references.js" />
     <Content Include="requirements.txt" />
     <Content Include="Intelligenter_Reiseassistent\static\content\bootstrap.css" />
     <Content Include="Intelligenter_Reiseassistent\static\content\bootstrap.min.css" />
@@ -49,21 +73,6 @@
     <Content Include="Intelligenter_Reiseassistent\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Intelligenter_Reiseassistent\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Intelligenter_Reiseassistent\static\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\bootstrap.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\bootstrap.min.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.min.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery-1.10.2.min.map" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.min.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\modernizr-2.6.2.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\respond.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\respond.min.js" />
-    <Content Include="Intelligenter_Reiseassistent\static\scripts\_references.js" />
     <Content Include="Intelligenter_Reiseassistent\templates\about.html" />
     <Content Include="Intelligenter_Reiseassistent\templates\contact.html" />
     <Content Include="Intelligenter_Reiseassistent\templates\index.html" />

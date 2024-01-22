@@ -1,33 +1,118 @@
+{# Extends the "layout.html" so this template inherits its structure and formatting #}
 {% extends "layout.html" %}
 
+{# Begins the content block that is defined in "layout.html" #}
 {% block content %}
+    <div class="m-5 alert">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="m-2 alert alert-info">
+                    <h2>Benutzerpraeferenzen:</h2>
+                    <form id="preferenceForm">
+                        <div>
+                            <label for="tage">Start von :</label>
+                        </div>
 
-<div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+                        <div>
+                            {# Dropdown list to select the start city #}
+                            <select class="form-select select_sy" required id="select_start" name="select_start">
+                                {# Loop through the list of clubs and add them as options #}
+                                {% for city_key, city_obj in cities.items():%}
+                                <option value="{{city_key}}">{{city_obj.id}} {{city_key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div>
+                            <label for="tage">Reisedauer :</label>
+                        </div>
+                        <div>
+                            <select class="form-select select_sy" id="tage" name="tage">
+                                <option value="7">Eine Wochen</option>
+                                <option value="14">Zwei Wochen</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="budget">Budget:</label>
+                        </div>
+                        <div>
+                            <select class="form-select select_sy" id="budget" name="Person_Budget">
+                                {% for bug in range(500, 2050, 50) %}
+                                <option value="{{bug}}">{{bug}} Euro</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div>
+                            <label for="max-distance">Max Distance:</label>
+                        </div>
+                        <div>
+                            <label>Entertainment Fussballfan:</label>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Person_Entertainment_Fussballfan" id="entertainmentLow" value="1">
+                                <label class="form-check-label" for="entertainmentLow">Niedrig</label>
+                                <input class="form-check-input" type="radio" name="Person_Entertainment_Fussballfan" id="entertainmentMedium" value="2" checked>
+                                <label class="form-check-label" for="entertainmentMedium">Mittel</label>
+                                <input class="form-check-input" type="radio" name="Person_Entertainment_Fussballfan" id="entertainmentHigh" value="3">
+                                <label class="form-check-label" for="entertainmentHigh">Hoch</label>
+                            </div>
+                        </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
+                        <div>
+                            <label>Traditionsfussballfan:</label>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Person_Traditionsfussballfan" id="traditionsfanLow" value="1">
+                                <label class="form-check-label" for="traditionsfanLow">Niedrig</label>
+                                <input class="form-check-input" type="radio" name="Person_Traditionsfussballfan" id="traditionsfanMedium" value="2" checked>
+                                <label class="form-check-label" for="traditionsfanMedium">Mittel</label>
+                                <input class="form-check-input" type="radio" name="Person_Traditionsfussballfan" id="traditionsfanHigh" value="3">
+                                <label class="form-check-label" for="traditionsfanHigh">Hoch</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="schnaeppchenjaeger">Schnaeppchenjaeger:</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Person_Schnaeppchenjaeger" id="schnaeppchenjaegerLow" value="1">
+                            <label class="form-check-label" for="schnaeppchenjaegerLow">Niedrig</label>
+                            <input class="form-check-input" type="radio" name="Person_Schnaeppchenjaeger" id="schnaeppchenjaegerMedium" value="2" checked>
+                            <label class="form-check-label" for="schnaeppchenjaegerMedium">Mittel</label>
+                            <input class="form-check-input" type="radio" name="Person_Schnaeppchenjaeger" id="schnaeppchenjaegerHigh" value="3">
+                            <label class="form-check-label" for="schnaeppchenjaegerHigh">Hoch </label>
+                        </div>
+                        <label>Partygaenger</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Partygaenger" id="partygaengerJa" value="1" checked>
+                            <label class="form-check-label" for="partygaengerJa">Ja</label>
+                            <input class="form-check-input" type="radio" name="Partygaenger" id="partygaengerNein" value="0">
+                            <label class="form-check-label" for="partygaengerNein">Nein</label>
+                        </div>
+                         <div class="container mt-3">
+                            <label for="bewertung_gewicht">Stadt Bewertung ist mir wichtig (0 bis 10):</label>
+                            <p class="small">
+                                (Hinweis: Bei einer hoeheren Gewichtung wird die Stadtbewertung hoeher gewichtet als die Reiseentfernung zum Reiseziel)
+                            </p>
+                            <input type="range" class="custom-range" id="bewertung_gewicht" value="5" name="bewertung_gewicht" min="0" max="10" step="1">
+                        </div>
+                        <div class="m-2">
+                            <!-- Send button that calls the "sendPreferenceFormData()" function when clicked -->
+                            <button class="btn btn-primary" type="button" onclick="sendPreferenceFormData()">Reise planen</button>
+                        </div>
+                        <div id="city_score">
+                        </div>
+                    </form>
+                </div>
+                <div class="not_show m-2" id="entscheidung_content"></div>
+            </div>
+                <!--<h2 class="alert alert-info">Entscheidungsinformationen</h2>-->
+                <div class="col-sm-6 not_show m-2" id="mapdiv">
+                    <h2 class="alert alert-info">Kartenuebersicht</h2>
+                </div>
+        </div>
+        </div>
+    {# Tips and links for further information #}
 
-{% endblock %}
+    {# Ends the content block #}
+    {% endblock %}
