@@ -15,7 +15,6 @@ from Intelligenter_Reiseassistent.Classes.TravelPlanner import TravelPlanner
 
 
 static_path = f'{os.path.dirname(os.path.abspath(__file__))}\static'
-csv_data_path = f'{static_path}\csv\\training_data.csv'
 cities = get_cities(f'{static_path}\csv\\cities.csv')
  # Pfad zur GeoJSON-Datei von Deutschland
 germany_geojson_path = f'{static_path}\scripts\\2_hoch.geo.json'
@@ -33,7 +32,7 @@ def post_preference_json_handler():
     budget = int(content.get('Person_Budget'))
     
     # Erstellt eine Instanz von TravelAssistant, um Benutzerpräferenzen zu berechnen
-    travelAssistant = TravelAssistant(csv_data_path, content, cities)
+    travelAssistant = TravelAssistant(f'{static_path}\csv\\training_data.csv', content, cities)
     
     # Berechnet die Benutzerpräferenzen basierend auf den angegebenen Daten
     city_with_rating, mse = travelAssistant.predict_user_preferences()
