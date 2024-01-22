@@ -1,6 +1,7 @@
 """
 Routes and views for the flask application.
 """
+import os
 from email import message
 from geopy.distance import geodesic
 from Intelligenter_Reiseassistent import app
@@ -10,12 +11,14 @@ from datetime import datetime
 from Intelligenter_Reiseassistent.Classes.city import get_cities
 from Intelligenter_Reiseassistent.Classes.TravelAssistant import TravelAssistant
 from Intelligenter_Reiseassistent.Classes.TravelPlanner import TravelPlanner
+import socket
+
 
 
 cities = get_cities()
-csv_data_path = 'C:\\Users\\nn\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\training_data.csv'
+csv_data_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\training_data.csv'
  # Pfad zur GeoJSON-Datei von Deutschland
-germany_geojson_path = 'C:\\Users\\nn\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\\scripts\\2_hoch.geo.json'
+germany_geojson_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\\scripts\\2_hoch.geo.json'
 
 @app.route('/post_preference_json', methods=['POST'])
 

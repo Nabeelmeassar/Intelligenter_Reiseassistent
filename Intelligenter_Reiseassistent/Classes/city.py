@@ -1,5 +1,7 @@
 # Importiere die Bibliothek geopy, um die Distanz zu berechnen
 import csv
+import socket
+from folium.utilities import os
 from geopy.distance import geodesic
 # Eine Klasse, die die Informationen über eine Stadt speichert
 class City:
@@ -53,7 +55,7 @@ class City:
 def get_cities():
     cities = {} 
     # Schritt 2: Öffnen der CSV-Datei und Erstellen von City-Objekten
-    csv_path = 'C:\\Users\\nn\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\cities.csv'
+    csv_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\cities.csv'
     with open(csv_path, newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.reader(csvfile)
         # next(reader)  # Überspringen Sie die Kopfzeile, falls vorhanden
