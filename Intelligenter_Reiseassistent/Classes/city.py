@@ -3,6 +3,8 @@ import csv
 import socket
 from folium.utilities import os
 from geopy.distance import geodesic
+
+
 # Eine Klasse, die die Informationen über eine Stadt speichert
 class City:
     cities = {}
@@ -52,10 +54,9 @@ class City:
     def update_distance_km(self, new_distance_km):
         self.distance_km = float(new_distance_km)
     
-def get_cities():
+def get_cities(csv_path):
     cities = {} 
     # Schritt 2: Öffnen der CSV-Datei und Erstellen von City-Objekten
-    csv_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\cities.csv'
     with open(csv_path, newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.reader(csvfile)
         # next(reader)  # Überspringen Sie die Kopfzeile, falls vorhanden

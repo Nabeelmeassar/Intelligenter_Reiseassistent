@@ -7,18 +7,18 @@ from geopy.distance import geodesic
 from Intelligenter_Reiseassistent import app
 from flask import request, jsonify
 from flask import render_template, request
+from flask import Flask
 from datetime import datetime
 from Intelligenter_Reiseassistent.Classes.city import get_cities
 from Intelligenter_Reiseassistent.Classes.TravelAssistant import TravelAssistant
 from Intelligenter_Reiseassistent.Classes.TravelPlanner import TravelPlanner
-import socket
 
 
-
-cities = get_cities()
-csv_data_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\csv\\training_data.csv'
+static_path = f'{os.path.dirname(os.path.abspath(__file__))}\static'
+csv_data_path = f'{static_path}\csv\\training_data.csv'
+cities = get_cities(f'{static_path}\csv\\cities.csv')
  # Pfad zur GeoJSON-Datei von Deutschland
-germany_geojson_path = f'C:\\Users\\{os.getlogin()}\\source\\repos\\Intelligenter_Reiseassistent\\Intelligenter_Reiseassistent\\static\\scripts\\2_hoch.geo.json'
+germany_geojson_path = f'{static_path}\scripts\\2_hoch.geo.json'
 
 @app.route('/post_preference_json', methods=['POST'])
 
